@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb2d;
     Vector2 velocity;
-    float speed = 5f;
+    float speed = 2f;
 
     void Awake()
     {

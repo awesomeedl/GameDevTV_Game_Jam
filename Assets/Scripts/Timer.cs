@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 {
     GameObject player;
     public List<Transform> spawnPoints;
-    public float levelTime = 20f;
+    public float levelTime = 25f;
     float currentTime;
 
     public TMP_Text timerText;
