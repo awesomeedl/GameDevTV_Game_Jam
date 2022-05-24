@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed;
-    public List<Transform> waypoints;
+    public GameObject path;
+    [SerializeField] List<Transform> waypoints;
     Transform currentWaypoint;
     int index = 0;
     // Start is called before the first frame update
     void Start()
     {
+        path.GetComponentsInChildren<Transform>(waypoints);
+        waypoints.Remove(path.transform);
         currentWaypoint = waypoints[0];
     }
 

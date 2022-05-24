@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5886572176075b84980467054e1f206f
+guid: 5344c17c8284456459ac41dabc9ab43f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlockMap_0
+      name: BlockMap 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f84363e98c857d4687e2b2a14a28e6e
-      internalID: -1933826874
+      spriteID: 15fbab7c9b4730f40a55d81522786578
+      internalID: -2113233210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_1
+      name: BlockMap 1_1
       rect:
         serializedVersion: 2
         x: 100
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 666e19f93a16c4742bc1626163884202
-      internalID: -400632599
+      spriteID: 5ae271acf93ac124f9aee48f4ee40857
+      internalID: 766377921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_2
+      name: BlockMap 1_2
       rect:
         serializedVersion: 2
         x: 200
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e07f5611e95829a4ea19f5b7addad9c3
-      internalID: -449602892
+      spriteID: 37ea237da2652db4e98aa270cb4f56cd
+      internalID: -295098969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_3
+      name: BlockMap 1_3
       rect:
         serializedVersion: 2
         x: 300
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5443a899a1139645a90ca88d1fc0471
-      internalID: 407927763
+      spriteID: 5e23f5a620ff6324ba11d482470c2b39
+      internalID: 461220488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_4
+      name: BlockMap 1_4
       rect:
         serializedVersion: 2
         x: 400
@@ -214,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd1c0fbc3ba5ba4cace885a18374aee
-      internalID: 466163928
+      spriteID: bb86ff1181086a748abca40e11d1eed6
+      internalID: -267153690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_5
+      name: BlockMap 1_5
       rect:
         serializedVersion: 2
         x: 0
@@ -235,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 063bc14428d2ebb48b99511d243c2091
-      internalID: -524127976
+      spriteID: 39eda4c1bd1e2e945b747c4e1e127e13
+      internalID: 264807060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_6
+      name: BlockMap 1_6
       rect:
         serializedVersion: 2
         x: 100
@@ -256,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98b7b8feb4b81b142942b60fd42c9aa8
-      internalID: -1470996119
+      spriteID: 26726c9b2f0893c48a96bed9250d26eb
+      internalID: 137292946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_7
+      name: BlockMap 1_7
       rect:
         serializedVersion: 2
         x: 200
@@ -277,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94b2a5ce3ecac0a40889ededf100fabb
-      internalID: -432667431
+      spriteID: 508da5de2acca3e439ceffb6a9e64181
+      internalID: 1602266526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_8
+      name: BlockMap 1_8
       rect:
         serializedVersion: 2
         x: 300
@@ -298,14 +298,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c66b1a2d9d3616c44af50122622354a8
-      internalID: -1703024857
+      spriteID: 84693e2523144e842bc9060135ccf066
+      internalID: 467156659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_9
+      name: BlockMap 1_9
       rect:
         serializedVersion: 2
         x: 400
@@ -319,14 +319,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a134c5b0a379bd4d9fbc3b32caec37e
-      internalID: -474916653
+      spriteID: 3a1b08f5db78d0a45a128ffc9cb56bcd
+      internalID: -1952129054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_10
+      name: BlockMap 1_10
       rect:
         serializedVersion: 2
         x: 0
@@ -340,14 +340,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1542035cbb9ad42a80445e30095f54
-      internalID: -1750281781
+      spriteID: 79c26bc520d50fc44a2d418da506c18d
+      internalID: -758257753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BlockMap_11
+      name: BlockMap 1_11
       rect:
         serializedVersion: 2
         x: 100
@@ -361,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7713476449f391f4b807606b5886813f
-      internalID: -1888998083
+      spriteID: 59b343c5dced6c349837955f519eb59c
+      internalID: 1351724276
       vertices: []
       indices: 
       edges: []
@@ -378,18 +378,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BlockMap_0: -1933826874
-      BlockMap_3: 407927763
-      BlockMap_4: 466163928
-      BlockMap_5: -524127976
-      BlockMap_10: -1750281781
-      BlockMap_8: -1703024857
-      BlockMap_9: -474916653
-      BlockMap_1: -400632599
-      BlockMap_2: -449602892
-      BlockMap_6: -1470996119
-      BlockMap_7: -432667431
-      BlockMap_11: -1888998083
+      BlockMap 1_11: 1351724276
+      BlockMap 1_1: 766377921
+      BlockMap 1_6: 137292946
+      BlockMap 1_10: -758257753
+      BlockMap 1_2: -295098969
+      BlockMap 1_4: -267153690
+      BlockMap 1_7: 1602266526
+      BlockMap 1_8: 467156659
+      BlockMap 1_3: 461220488
+      BlockMap 1_0: -2113233210
+      BlockMap 1_5: 264807060
+      BlockMap 1_9: -1952129054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
