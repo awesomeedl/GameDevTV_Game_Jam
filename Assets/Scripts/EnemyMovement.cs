@@ -4,36 +4,74 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public enum movement {
+        move,
+        rotate
+    }
+    movement currentMovement = movement.move;
     public float moveSpeed;
-    public GameObject path;
+    public float rotateCooldown = 0.5f;
+    float rotateTimer;
+    [SerializeField] List<GameObject> paths;
     [SerializeField] List<Transform> waypoints;
     Transform currentWaypoint;
-    int index = 0;
+    public int index = 0;
     // Start is called before the first frame update
     void Start()
     {
-        path.GetComponentsInChildren<Transform>(waypoints);
-        waypoints.Remove(path.transform);
+        GameManager.instance.AddEnemy(this);
+        paths[0].GetComponentsInChildren<Transform>(waypoints);
+        waypoints.Remove(paths[0].transform);
         currentWaypoint = waypoints[0];
+        rotateTimer = rotateCooldown;
     }
+
+    public void ChangePathSet(int index) {
+        waypoints.Clear();
+        paths[index].GetComponentsInChildren<Transform>(waypoints);
+        waypoints.Remove(paths[index].transform);
+        transform.position = waypoints[0].position;
+        currentWaypoint = waypoints[1];
+        rotateTimer = rotateCooldown;
+    }    
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        Movement();
+    }
 
+    void Movement() {
+        switch(currentMovement) {
+            case movement.rotate:
+                Rotate(); break;
+            case movement.move:
+                Move(); break;
+        }
     }
 
     void Move()
     {
         if(Vector2.Distance(transform.position, currentWaypoint.position) > float.Epsilon) {
             transform.position = Vector2.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
-            transform.up = currentWaypoint.position - transform.position;
         }
         else
         {
             index = index == waypoints.Count - 1 ? 0 : index + 1;
             currentWaypoint = waypoints[index];
+            currentMovement = movement.rotate;
+        }
+    }
+
+    void Rotate()
+    {
+        if(rotateTimer > 0) {
+            rotateTimer -= Time.deltaTime;
+        }
+        else {
+            transform.up = currentWaypoint.position - transform.position;
+            rotateTimer = rotateCooldown;
+            currentMovement = movement.move;
         }
     }
 }

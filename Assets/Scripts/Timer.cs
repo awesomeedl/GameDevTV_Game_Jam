@@ -5,16 +5,13 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    GameObject player;
-    public List<Transform> spawnPoints;
     public float levelTime = 25f;
     float currentTime;
-
+    
     public TMP_Text timerText;
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<Player>().gameObject;
         currentTime = levelTime;
     }
 
@@ -31,12 +28,12 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            Respawn();
+            GameManager.instance.Respawn();
             currentTime = levelTime;
         }
     }
 
-    void Respawn() {
-        player.transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+    public void ResetTimer() {
+        currentTime = levelTime;
     }
 }

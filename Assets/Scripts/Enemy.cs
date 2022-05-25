@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         if(detected == true) {
             spriteRenderer.color = Color.red;
+            detected = false;
         }
         else {
             spriteRenderer.color = cachedColor;
@@ -32,6 +33,6 @@ public class Enemy : MonoBehaviour
     }
 
     void OnTriggerEnter2D() {
-        detected = true;
-    }    
+        GameManager.instance.Respawn();
+    }
 }
