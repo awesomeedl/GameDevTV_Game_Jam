@@ -20,18 +20,16 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         GameManager.instance.AddEnemy(this);
-        paths[0].GetComponentsInChildren<Transform>(waypoints);
-        waypoints.Remove(paths[0].transform);
-        currentWaypoint = waypoints[0];
-        rotateTimer = rotateCooldown;
+        ChangePathSet(0);
     }
 
     public void ChangePathSet(int index) {
         waypoints.Clear();
-        paths[index].GetComponentsInChildren<Transform>(waypoints);
-        waypoints.Remove(paths[index].transform);
+        for(int i = 0; i < paths[index].transform.childCount; i++) {
+            waypoints.Add(paths[index].transform.GetChild(i).transform);
+        }
         transform.position = waypoints[0].position;
-        currentWaypoint = waypoints[1];
+        currentWaypoint = waypoints[0];
         rotateTimer = rotateCooldown;
     }    
 

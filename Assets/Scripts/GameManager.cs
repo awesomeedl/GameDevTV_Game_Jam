@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    List<EnemyMovement> enemies;
+    List<EnemyMovement> enemies = new List<EnemyMovement>();
     public List<Transform> spawnPoints;
     GameObject player;
     int spawnPointIndex;
