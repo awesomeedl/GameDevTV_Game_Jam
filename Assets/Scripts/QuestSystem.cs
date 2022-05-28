@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class QuestSystem : MonoBehaviour
 {
-    public List<Quest> quests;
+    public Dialogue endDialogue;
+    List<Quest> quests = new List<Quest>();
 
-    void FixedUpdate()
-    {
-        bool allCompleted = true;
-        foreach(var quest in quests) {
-            if(!quest.completed) {
-                allCompleted = false;
-            }
+    public void AddQuest(Quest quest) {
+        quests.Add(quest);
+    }
+
+    public void CompleteQuest(Quest quest) {
+        quests.Remove(quest);
+        if(quests.Count == 0) {
+            StartCoroutine(NextLevel());
         }
-        if(allCompleted) {
-            SceneLoader.instance.LoadNextLevel();
+    }
+
+    IEnumerator NextLevel() {
+        DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
+        dialogueManager.StartDialogue(endDialogue);
+        while(dialogueManager.started) {
+            yield return null;
         }
+        SceneLoader.instance.LoadNextLevel();
     }
 }

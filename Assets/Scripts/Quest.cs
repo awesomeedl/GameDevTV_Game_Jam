@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-    public bool completed = false;
+    QuestSystem questSystem;
+
+    void Start() {
+        questSystem = FindObjectOfType<QuestSystem>();
+        questSystem.AddQuest(this);
+    }
 
     public void Complete() {
-        completed = true;
+        questSystem.CompleteQuest(this);
     }
 }

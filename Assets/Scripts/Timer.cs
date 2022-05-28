@@ -6,7 +6,6 @@ public class Timer : MonoBehaviour
 {
     public float levelTime = 5f;
     float currentTime;
-    
     public Image img;
     // Start is called before the first frame update
     void Start()

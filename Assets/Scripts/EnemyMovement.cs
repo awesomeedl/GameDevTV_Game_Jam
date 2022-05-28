@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public enum Direction {
+        up,
+        down,
+        left,
+        right
+    }
+    Direction currentDirection = Direction.up;
+
     public enum movement {
         move,
         rotate
@@ -74,7 +82,20 @@ public class EnemyMovement : MonoBehaviour
             rotateTimer -= Time.deltaTime;
         }
         else {
-            vision.transform.up = currentWaypoint.position - transform.position;
+            Vector2 dir = (currentWaypoint.position - transform.position).normalized;
+            vision.transform.up = dir;
+            if(Mathf.Abs(Vector2.Dot(dir, Vector2.up)) > 0.5f) {
+                currentDirection = Direction.up;
+            }
+            else if(Mathf.Abs(Vector2.Dot(dir, Vector2.left)) > 0.5f) {
+                currentDirection = Direction.left;
+            }
+            else if(Mathf.Abs(Vector2.Dot(dir, Vector2.right)) > 0.5f) {
+                currentDirection = Direction.right;
+            }
+            else {
+                currentDirection = Direction.down;
+            }
             rotateTimer = rotateCooldown;
             currentMovement = movement.move;
         }

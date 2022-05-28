@@ -2,31 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
 	public Image characterImage;
-	public Text dialogueText;
+	public TMP_Text dialogueText;
 
-	public Animator animator;
 
-	private Queue<string> sentences;
-	private Queue<Sprite> icons;
+	public UIController uiController;
+
+	private Queue<string> sentences = new Queue<string>();
+	private Queue<Sprite> icons = new Queue<Sprite>();
 
 	public bool started = false;
-
-	// Use this for initialization
-	void Start () {
-		sentences = new Queue<string>();
-		icons = new Queue<Sprite>();
-	}
 
 	public void StartDialogue (Dialogue dialogue)
 	{
 		started = true;
 		Time.timeScale = 0;
-		animator.SetBool("IsOpen", true);
 
+		uiController.ToggleUI();
 		
 		icons.Clear();
 		sentences.Clear();
@@ -74,7 +70,7 @@ public class DialogueManager : MonoBehaviour {
 	{
 		started = false;
 		Time.timeScale = 1;
-		animator.SetBool("IsOpen", false);
+		uiController.ToggleUI();
 	}
 
 }

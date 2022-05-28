@@ -31,8 +31,4 @@ public class Enemy : MonoBehaviour
             spriteRenderer.color = cachedColor;
         }
     }
-
-    void OnTriggerEnter2D() {
-        GameManager.instance.Respawn();
-    }
 }

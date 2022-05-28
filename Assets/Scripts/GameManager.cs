@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     int spawnPointIndex = 0;
     GameObject player;
     Animator playerAnimator;
-    
+    public Timer timer;
 
     void Awake()
     {
@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void Respawn() {
+        timer.ResetTimer();
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
-        spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         StartCoroutine(RespawnCoroutine());
     }
 
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         playerAnimator.SetTrigger("die");
         yield return new WaitForSecondsRealtime(1f);
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
+        spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
         foreach(var enemy in enemies) {
             enemy.InitPosition();
