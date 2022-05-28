@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D rb2d;
     Vector2 velocity;
-    float speed = 2f;
+    float speed = 3f;
 
     void Awake()
     {
@@ -31,9 +31,9 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        velocity.x = Input.GetAxis("Horizontal");
-        velocity.y = Input.GetAxis("Vertical");
+        velocity.x = Input.GetAxisRaw("Horizontal");
+        velocity.y = Input.GetAxisRaw("Vertical");
 
-        rb2d.MovePosition(rb2d.position + velocity * Time.fixedDeltaTime * speed);
+        rb2d.velocity = velocity * speed;
     }
 }

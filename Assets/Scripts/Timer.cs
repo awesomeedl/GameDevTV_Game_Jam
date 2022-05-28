@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-
+using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
-    public float levelTime = 25f;
+    public float levelTime = 5f;
     float currentTime;
     
-    public TMP_Text timerText;
+    public Image img;
     // Start is called before the first frame update
     void Start()
     {
+        img = GetComponent<Image>();
         currentTime = levelTime;
     }
 
@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     void CountDown() {
         if(currentTime > 0) {
             currentTime -= Time.deltaTime;
-            timerText.text = "Remaining Time: " + currentTime.ToString("N");
+            img.fillAmount = currentTime/levelTime;
         }
         else
         {

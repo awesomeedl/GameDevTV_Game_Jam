@@ -16,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] List<Transform> waypoints;
     Transform currentWaypoint;
     public int index = 0;
+
+    public Transform vision;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +30,15 @@ public class EnemyMovement : MonoBehaviour
         for(int i = 0; i < paths[index].transform.childCount; i++) {
             waypoints.Add(paths[index].transform.GetChild(i).transform);
         }
+        InitPosition();
+    }
+
+    public void InitPosition() {
         transform.position = waypoints[0].position;
         currentWaypoint = waypoints[0];
         rotateTimer = rotateCooldown;
-    }    
+        index = 0;
+    }
 
     // Update is called once per frame
     void Update()
@@ -67,7 +74,7 @@ public class EnemyMovement : MonoBehaviour
             rotateTimer -= Time.deltaTime;
         }
         else {
-            transform.up = currentWaypoint.position - transform.position;
+            vision.transform.up = currentWaypoint.position - transform.position;
             rotateTimer = rotateCooldown;
             currentMovement = movement.move;
         }

@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     List<EnemyMovement> enemies = new List<EnemyMovement>();
     public List<Transform> spawnPoints;
+    int spawnPointIndex = 0;
     GameObject player;
-    int spawnPointIndex;
+    Animator playerAnimator;
+    
 
     void Awake()
     {
@@ -21,12 +23,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        spawnPointIndex = 0;
     }
 
     void Start() {
         player = FindObjectOfType<Player>().gameObject;
+        playerAnimator = player.GetComponent<Animator>();
+
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
     }
 
     public void AddEnemy(EnemyMovement enemy) {
@@ -40,8 +43,21 @@ public class GameManager : MonoBehaviour
     }
 
     public void Respawn() {
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
         spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
-        player.transform.position = spawnPoints[spawnPointIndex].position;
+        StartCoroutine(RespawnCoroutine());
+    }
+
+    IEnumerator RespawnCoroutine() {
+        Time.timeScale = 0f;
+        playerAnimator.SetTrigger("die");
+        yield return new WaitForSecondsRealtime(1f);
+        player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
+        foreach(var enemy in enemies) {
+            enemy.InitPosition();
+        }
+        Time.timeScale = 1f;
     }
 
 
