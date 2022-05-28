@@ -51,7 +51,8 @@ public class GameManager : MonoBehaviour
     IEnumerator RespawnCoroutine() {
         Time.timeScale = 0f;
         playerAnimator.SetTrigger("die");
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.9f);
+        playerAnimator.SetTrigger("respawn");
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
         spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
