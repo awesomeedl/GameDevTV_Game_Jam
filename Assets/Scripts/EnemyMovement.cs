@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public enum Direction {
-        up,
-        down,
-        left,
-        right
-    }
-    Direction currentDirection = Direction.up;
-
     public enum movement {
         move,
         rotate
@@ -21,11 +13,18 @@ public class EnemyMovement : MonoBehaviour
     public float rotateCooldown = 0.5f;
     float rotateTimer;
     [SerializeField] List<GameObject> paths;
-    [SerializeField] List<Transform> waypoints;
+    List<Transform> waypoints = new List<Transform>();
     Transform currentWaypoint;
     public int index = 0;
 
+    Animator animator;
+
     public Transform vision;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -83,19 +82,9 @@ public class EnemyMovement : MonoBehaviour
         }
         else {
             Vector2 dir = (currentWaypoint.position - transform.position).normalized;
+            animator.SetFloat("Horizontal", dir.x);
+            animator.SetFloat("Vertical", dir.y);
             vision.transform.up = dir;
-            if(Mathf.Abs(Vector2.Dot(dir, Vector2.up)) > 0.5f) {
-                currentDirection = Direction.up;
-            }
-            else if(Mathf.Abs(Vector2.Dot(dir, Vector2.left)) > 0.5f) {
-                currentDirection = Direction.left;
-            }
-            else if(Mathf.Abs(Vector2.Dot(dir, Vector2.right)) > 0.5f) {
-                currentDirection = Direction.right;
-            }
-            else {
-                currentDirection = Direction.down;
-            }
             rotateTimer = rotateCooldown;
             currentMovement = movement.move;
         }

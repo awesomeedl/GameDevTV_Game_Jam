@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyVision : MonoBehaviour
 {
-    void OnTriggerEnter2D() {
+    void OnTriggerEnter2D(Collider2D collider2D) {
         GameManager.instance.Respawn();
     }
 }

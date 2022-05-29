@@ -1607,6 +1607,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46b6405bbb9ddb41b4ba70178df4114, type: 3}
+--- !u!1 &671953386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4187309410616199046, guid: 25730208b2be511409c881685704fdb0, type: 3}
+  m_PrefabInstance: {fileID: 4411156339513067696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &671953388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671953386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe70266210b28a4b916fcd3ef2362c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &734087741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2373,7 +2390,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2421,6 +2438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueUI: {fileID: 391023757}
   GameUI: {fileID: 1535257323}
+  respawnButton: {fileID: 1564684713}
 --- !u!4 &960428356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 715876717024335284, guid: b46b6405bbb9ddb41b4ba70178df4114, type: 3}
@@ -2709,6 +2727,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46b6405bbb9ddb41b4ba70178df4114, type: 3}
+--- !u!1 &1071982175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4411156338590248841, guid: 25730208b2be511409c881685704fdb0, type: 3}
+  m_PrefabInstance: {fileID: 4411156339513067696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1071982180
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071982175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e57160cbc69aefd43bc613a31a42b313, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1194049274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6798845837527732329, guid: 747770ac727e6fc4e99eff13788003b7, type: 3}
@@ -3615,7 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -5201,6 +5244,18 @@ PrefabInstance:
     - target: {fileID: 4411156338590248845, guid: 25730208b2be511409c881685704fdb0, type: 3}
       propertyPath: waypoints.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411156339023781990, guid: 25730208b2be511409c881685704fdb0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411156339023781990, guid: 25730208b2be511409c881685704fdb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486851366391186232, guid: 25730208b2be511409c881685704fdb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25730208b2be511409c881685704fdb0, type: 3}
