@@ -12,28 +12,16 @@ public class Player : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        velocity.x = Input.GetAxisRaw("Horizontal");
+        velocity.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
     {
-        Move();
-    }
-
-    void Move()
-    {
-        velocity.x = Input.GetAxisRaw("Horizontal");
-        velocity.y = Input.GetAxisRaw("Vertical");
-
         rb2d.velocity = velocity * speed;
     }
 }

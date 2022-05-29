@@ -14,8 +14,6 @@ public class DialogueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogueManager.started && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))) {
-            dialogueManager.DisplayNextSentence();
-        }   
+
     }
 }

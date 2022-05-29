@@ -6,9 +6,14 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Dialogue {
 
-	public Sprite[] icons;
+	[System.Serializable]
+	public class Sentence {
+		public Sprite icon;
+		public bool dim;
+		[TextArea(3, 10)]
+		public string sentence;
+	}
 
-	[TextArea(3, 10)]
-	public string[] sentences;
+	public List<Sentence> sentences;
 
 }

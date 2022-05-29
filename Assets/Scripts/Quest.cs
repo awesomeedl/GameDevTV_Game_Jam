@@ -4,14 +4,28 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-    QuestSystem questSystem;
+    public Quest preRequisite;
+    public Dialogue triggerDialogue;
+    public bool openDoor = false;
+    public GameObject door;
+    public bool changeEnemyPath = false;
+    public int enemyPathIndex = 0;
+    bool completed = false;
 
     void Start() {
-        questSystem = FindObjectOfType<QuestSystem>();
-        questSystem.AddQuest(this);
+        QuestSystem.reference.AddQuest(this);
     }
 
     public void Complete() {
-        questSystem.CompleteQuest(this);
+        if((preRequisite == null || (preRequisite != null && preRequisite.completed)) && !completed)
+        {
+            GetComponent<SpriteRenderer>().color = Color.gray;
+            QuestSystem.reference.CompleteQuest(this);
+            completed = true;
+        }
+    }
+
+    void OnTriggerEnter2D() {        
+        GetComponent<Quest>().Complete();
     }
 }

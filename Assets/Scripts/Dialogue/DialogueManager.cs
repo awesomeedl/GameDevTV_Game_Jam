@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour {
 
 	private Queue<string> sentences = new Queue<string>();
 	private Queue<Sprite> icons = new Queue<Sprite>();
+	private Queue<bool> dimBools = new Queue<bool>();
 
 	public bool started = false;
 
@@ -27,14 +28,11 @@ public class DialogueManager : MonoBehaviour {
 		icons.Clear();
 		sentences.Clear();
 
-		foreach (string sentence in dialogue.sentences)
+		foreach (var sentence in dialogue.sentences)
 		{
-			sentences.Enqueue(sentence);
-		}
-
-		foreach (Sprite icon in dialogue.icons)
-		{
-			icons.Enqueue(icon);
+			sentences.Enqueue(sentence.sentence);
+			icons.Enqueue(sentence.icon);
+			dimBools.Enqueue(sentence.dim);
 		}
 
 		DisplayNextSentence();
@@ -50,7 +48,9 @@ public class DialogueManager : MonoBehaviour {
 
 		string sentence = sentences.Dequeue();
 		Sprite icon = icons.Dequeue();
+		bool dim = dimBools.Dequeue();
 		characterImage.sprite = icon;
+		characterImage.color = dim ? Color.gray : Color.white;
 
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));

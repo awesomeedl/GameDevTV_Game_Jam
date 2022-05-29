@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    List<EnemyMovement> enemies = new List<EnemyMovement>();
+    List<Enemy> enemies = new List<Enemy>();
     public List<Transform> spawnPoints;
     int spawnPointIndex = 0;
-    GameObject player;
+    public GameObject player;
     Animator playerAnimator;
     public Timer timer;
     public Animator ScreenFadeAnimator;
@@ -27,17 +27,15 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-        player = FindObjectOfType<Player>().gameObject;
         playerAnimator = player.GetComponent<Animator>();
-
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
     }
 
-    public void AddEnemy(EnemyMovement enemy) {
+    public void AddEnemy(Enemy enemy) {
        enemies.Add(enemy); 
     }
 
-    public void ChaneEnemyPattern(int index) {
+    public void ChangeEnemyPattern(int index) {
         foreach(var enemy in enemies) {
             enemy.ChangePathSet(index);
         }
@@ -46,6 +44,7 @@ public class GameManager : MonoBehaviour
     public void Respawn() {
         timer.ResetTimer();
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
+        SoundManager.PlaySound("death");
         StartCoroutine(RespawnCoroutine());
     }
 

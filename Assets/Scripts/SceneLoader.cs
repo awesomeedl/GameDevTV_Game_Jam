@@ -1,49 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    static int currentLevel = 1;
-    public static SceneLoader instance;
+    static int levelIndex = 1;
 
-    void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public void LoadMenu()
+    public static void LoadMenu()
     {
         SceneManager.LoadScene(0);
     }
 
-    public void LoadNextLevel()
+    public static void LoadNextLevel()
     {
-        int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
-        currentLevel = nextScene;
-        SceneManager.LoadScene(nextScene);
+        levelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(levelIndex);
     }
 
-    public void LoadGameOver()
+    public static void LoadGameOver()
     {
         SceneManager.LoadScene("Gameover");
     }
 
-    public void Retry()
+    public static void Retry()
     {
-        SceneManager.LoadScene(currentLevel);
+        SceneManager.LoadScene(levelIndex);
     }
 
-    public void Quit()
+    public static void Quit()
     {
         Application.Quit();
     }

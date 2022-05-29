@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public DialogueManager dialogueManager;
     public GameObject DialogueUI;
     public GameObject GameUI;
     public Button respawnButton;
@@ -21,5 +22,9 @@ public class UIController : MonoBehaviour
         {
             respawnButton.onClick.Invoke();
         }
+
+        if(dialogueManager.started && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))) {
+            dialogueManager.DisplayNextSentence();
+        }   
     }
 }
