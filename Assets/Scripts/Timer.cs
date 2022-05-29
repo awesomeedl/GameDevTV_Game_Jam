@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            GameManager.instance.Respawn();
+            GameManager.reference.Respawn();
             currentTime = levelTime;
         }
     }

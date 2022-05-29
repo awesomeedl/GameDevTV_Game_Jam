@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager reference;
     List<Enemy> enemies = new List<Enemy>();
     public List<Transform> spawnPoints;
     int spawnPointIndex = 0;
@@ -15,15 +15,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        reference = this;
     }
 
     void Start() {

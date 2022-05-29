@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum movement {
-        move,
-        rotate
-    }
-    movement currentMovement = movement.move;
     public float moveSpeed;
     public float rotateCooldown = 0.5f;
+    bool isMoving;
     float rotateTimer;
-    [SerializeField] List<GameObject> paths;
+    public List<GameObject> paths;
     List<Transform> waypoints = new List<Transform>();
     Transform currentWaypoint;
-    public int index = 0;
+    int wayPtIndex = 0;
     Animator animator;
     Transform vision;
 
@@ -27,7 +23,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.AddEnemy(this);
+        GameManager.reference.AddEnemy(this);
         ChangePathSet(0);
     }
 
@@ -43,7 +39,7 @@ public class Enemy : MonoBehaviour
         transform.position = waypoints[0].position;
         currentWaypoint = waypoints[0];
         rotateTimer = rotateCooldown;
-        index = 0;
+        wayPtIndex = 0;
     }
 
     // Update is called once per frame
@@ -53,11 +49,12 @@ public class Enemy : MonoBehaviour
     }
 
     void Movement() {
-        switch(currentMovement) {
-            case movement.rotate:
-                Rotate(); break;
-            case movement.move:
-                Move(); break;
+        if(isMoving) {
+            Move();
+        }
+        else
+        {
+            Rotate();
         }
     }
 
@@ -68,9 +65,9 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            index = index == waypoints.Count - 1 ? 0 : index + 1;
-            currentWaypoint = waypoints[index];
-            currentMovement = movement.rotate;
+            wayPtIndex = wayPtIndex == waypoints.Count - 1 ? 0 : wayPtIndex + 1;
+            currentWaypoint = waypoints[wayPtIndex];
+            isMoving = false;
         }
     }
 
@@ -85,7 +82,7 @@ public class Enemy : MonoBehaviour
             animator.SetFloat("Vertical", dir.y);
             vision.transform.up = dir;
             rotateTimer = rotateCooldown;
-            currentMovement = movement.move;
+            isMoving = true;
         }
     }
 }

@@ -31,7 +31,7 @@ public class QuestSystem : MonoBehaviour
             Destroy(quest.door);
         }
         if(quest.changeEnemyPath) {
-            GameManager.instance.ChangeEnemyPattern(quest.enemyPathIndex);
+            GameManager.reference.ChangeEnemyPattern(quest.enemyPathIndex);
         }
         quests.Remove(quest);
         if(quests.Count == 0) {

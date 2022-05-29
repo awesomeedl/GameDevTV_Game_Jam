@@ -23,7 +23,8 @@ public class EnemyVision : MonoBehaviour
     void Update()
     {
         if(isPlayerHit) {
-            GameManager.instance.Respawn();
+            GameManager.reference.Respawn();
+            isPlayerHit = false;
         }
     }
 
