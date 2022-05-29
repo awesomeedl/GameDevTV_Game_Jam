@@ -756,7 +756,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1326334108}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &320170592 stripped
 Transform:
@@ -5514,11 +5514,11 @@ PrefabInstance:
     - target: {fileID: 2656205704804842656, guid: 0e8bda33dc547a74480a691f634c045d, type: 3}
       propertyPath: endDialogue.sentences.Array.data[0].icon
       value: 
-      objectReference: {fileID: 21300000, guid: 0d2a22ad13a3b5b4c90eb0c6cd4f43a8, type: 3}
+      objectReference: {fileID: 21300000, guid: caa0a1659881f6b409f6cdd0a8f4461e, type: 3}
     - target: {fileID: 2656205704804842656, guid: 0e8bda33dc547a74480a691f634c045d, type: 3}
       propertyPath: endDialogue.sentences.Array.data[1].icon
       value: 
-      objectReference: {fileID: 21300000, guid: cb9de41ed6b52c346aa362889d81a597, type: 3}
+      objectReference: {fileID: 21300000, guid: caa0a1659881f6b409f6cdd0a8f4461e, type: 3}
     - target: {fileID: 2656205704804842656, guid: 0e8bda33dc547a74480a691f634c045d, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[0].icon
       value: 
