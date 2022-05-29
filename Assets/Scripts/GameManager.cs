@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     GameObject player;
     Animator playerAnimator;
     public Timer timer;
+    public Animator ScreenFadeAnimator;
 
     void Awake()
     {
@@ -51,14 +52,15 @@ public class GameManager : MonoBehaviour
     IEnumerator RespawnCoroutine() {
         Time.timeScale = 0f;
         playerAnimator.SetTrigger("die");
-        yield return new WaitForSecondsRealtime(0.9f);
-        playerAnimator.SetTrigger("respawn");
+        ScreenFadeAnimator.SetTrigger("play");
+        yield return new WaitForSecondsRealtime(0.4f);
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
-        spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
-        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
         foreach(var enemy in enemies) {
             enemy.InitPosition();
         }
+        yield return new WaitForSecondsRealtime(0.4f);
+        spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
         Time.timeScale = 1f;
     }
 
