@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueText
       objectReference: {fileID: 0}
+    - target: {fileID: 6874945992119292122, guid: 7904d3cd059c15044b7adc6359f6d9a4, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7904d3cd059c15044b7adc6359f6d9a4, type: 3}
 --- !u!114 &821680515390159050 stripped

@@ -7,8 +7,6 @@ public class FinalQuest : MonoBehaviour
     public Dialogue triggerDialogue;
     // Start is called before the first frame update
     public void Complete() {
-        GetComponent<SpriteRenderer>().color = Color.gray;
-        DialogueManager.reference.StartDialogue(triggerDialogue);
         StartCoroutine(NextLevel());
     }
 

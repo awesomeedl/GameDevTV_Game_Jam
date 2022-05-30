@@ -2475,7 +2475,7 @@ PrefabInstance:
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 1720555819}
+      objectReference: {fileID: 0}
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: openDoor
       value: 0
@@ -3091,6 +3091,10 @@ PrefabInstance:
     - target: {fileID: 4440394500504397423, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: m_Name
       value: CritialSystems
+      objectReference: {fileID: 0}
+    - target: {fileID: 4440394500504397423, guid: 4009954e5244e514288d5b7145a70533, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127491392104175269, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: m_RootOrder
@@ -4801,7 +4805,7 @@ PrefabInstance:
     - target: {fileID: 876136272595919152, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1188395254, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
+      objectReference: {fileID: -1210584780, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: door
       value: 

@@ -199,6 +199,10 @@ PrefabInstance:
       propertyPath: levelTime
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8022122079577527425, guid: 4009954e5244e514288d5b7145a70533, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.size
       value: 0

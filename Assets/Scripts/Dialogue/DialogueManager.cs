@@ -52,9 +52,15 @@ public class DialogueManager : MonoBehaviour {
 		string sentence = sentences.Dequeue();
 		Sprite icon = icons.Dequeue();
 		bool dim = dimBools.Dequeue();
-		characterImage.sprite = icon;
-		characterImage.color = dim ? Color.gray : Color.white;
-
+		if(icon == null)
+		{
+			characterImage.color = Color.clear;
+		}
+		else
+		{
+			characterImage.sprite = icon;
+			characterImage.color = dim ? Color.gray : Color.white;
+		}
 		StopAllCoroutines();
 		StartCoroutine(TypeSentence(sentence));
 	}
