@@ -47,13 +47,14 @@ public class GameManager : MonoBehaviour
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
         SoundManager.PlaySound("death");
         playerAnimator.SetTrigger("die");
+        yield return new WaitForSecondsRealtime(0.4f);
         ScreenFadeAnimator.SetTrigger("play");
-        yield return new WaitForSecondsRealtime(0.45f);
+        yield return new WaitForSecondsRealtime(0.25f);
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
         foreach(var enemy in enemies) {
             enemy.InitPosition();
         }
-        yield return new WaitForSecondsRealtime(0.45f);
+        yield return new WaitForSecondsRealtime(0.25f);
         spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
         Time.timeScale = 1f;

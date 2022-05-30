@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe70266210b28a4b916fcd3ef2362c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visionColor: {r: 1, g: 1, b: 1, a: 0.3137255}
+  visionColor: {r: 0.6886792, g: 0.20465466, b: 0.37324733, a: 0.3137255}
   aggroColor: {r: 1, g: 0, b: 0, a: 0.3137255}
 --- !u!1 &4411156338590248841
 GameObject:

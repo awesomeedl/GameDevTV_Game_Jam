@@ -9,6 +9,8 @@ public class QuestSystem : MonoBehaviour
     public Dialogue endDialogue;
     List<Quest> quests = new List<Quest>();
 
+    
+
     void Awake() {
         reference = this;
     }
