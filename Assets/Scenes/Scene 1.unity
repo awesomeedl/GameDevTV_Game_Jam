@@ -4390,9 +4390,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[3].sentence
-      value: "It is hidden deep in the nest of Mr. Grey. Under the watchful eyes
-        of Lady Leah\r\nBut I\u2019m sure a master escapist like you would be able
-        to evade all surveillance.\r\n"
+      value: "It is hidden deep in Mr. Grey's lair. Under the watchful eyes of Lady
+        Leah\r\nBut I\u2019m sure a master escapist like you would be able to evade
+        all surveillance.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[4].sentence
