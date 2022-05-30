@@ -6050,7 +6050,7 @@ PrefabInstance:
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[16].icon
       value: 
-      objectReference: {fileID: 21300000, guid: 0d2a22ad13a3b5b4c90eb0c6cd4f43a8, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[17].icon
       value: 
@@ -6091,7 +6091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[8].sentence
-      value: "\u201CHer body twitches.\u201D"
+      value: '*Her body twitches.*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[9].sentence
@@ -6100,7 +6100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[10].sentence
-      value: "\u201CHer body twitches again.\u201D"
+      value: '*Her body twitches again.*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[11].sentence
@@ -6147,7 +6147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[21].sentence
-      value: "\u201CObtained a bottle of nectar\u201D"
+      value: '*Obtained a bottle of nectar*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[22].sentence
@@ -6211,7 +6211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[2].sentence
-      value: "\u201CHand over Baldini\u2019s wig.\u201D"
+      value: "*Hand over Baldini\u2019s wig.*"
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[3].sentence
@@ -6280,7 +6280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[17].sentence
-      value: "\u201COn the fourth day, a wild winemaker appeared!\u201D"
+      value: '*On the fourth day, a wild winemaker appeared!*'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4009954e5244e514288d5b7145a70533, type: 3}

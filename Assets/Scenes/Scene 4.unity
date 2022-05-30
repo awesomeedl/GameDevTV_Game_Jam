@@ -2638,7 +2638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[2].sentence
-      value: " \u201CHand over delicious nectar.\u201D"
+      value: '*Hand over delicious nectar.*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[3].sentence

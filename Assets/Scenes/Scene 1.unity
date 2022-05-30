@@ -4298,11 +4298,11 @@ PrefabInstance:
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[18].icon
       value: 
-      objectReference: {fileID: 21300000, guid: b99fa0db8b41eb441b54f655466c5536, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[19].icon
       value: 
-      objectReference: {fileID: 21300000, guid: b99fa0db8b41eb441b54f655466c5536, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[20].icon
       value: 
@@ -4366,11 +4366,11 @@ PrefabInstance:
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[35].icon
       value: 
-      objectReference: {fileID: 21300000, guid: b99fa0db8b41eb441b54f655466c5536, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[36].icon
       value: 
-      objectReference: {fileID: 21300000, guid: b99fa0db8b41eb441b54f655466c5536, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[0].sentence
       value: "Ho ho ho. A lost soul. I haven\u2019t seen one in centuries."
@@ -4477,8 +4477,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[17].sentence
-      value: "\u201CSuddenly, you experienced a terrible heartache, and passed out
-        from the pain.\u201D"
+      value: '*Suddenly, you experienced a terrible heartache, and passed out from
+        the pain.*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[18].sentence
@@ -4557,13 +4557,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[35].sentence
-      value: "\u201CAvoid enemy detection and reach the character at the end of each
-        level. WASD for movement, and space for respawning. "
+      value: '*Avoid enemy detection and reach the character at the end of each level.
+        WASD for movement, and space for respawning.*'
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: beginDialogue.sentences.Array.data[36].sentence
-      value: "Your next respawn location is indicated by the lightened fire symbol.
-        The respawn locations will change cyclically until you finish the level.\u201D"
+      value: '*Your next respawn location is indicated by the lightened fire symbol.
+        The respawn locations will change cyclically until you finish the level.*'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4009954e5244e514288d5b7145a70533, type: 3}
