@@ -1885,7 +1885,7 @@ PrefabInstance:
     - target: {fileID: 876136272595919152, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1188395254, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
+      objectReference: {fileID: -2095386926, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: door
       value: 
@@ -5071,6 +5071,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 876136272595919152, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1188395254, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: door
       value: 
@@ -5083,6 +5087,14 @@ PrefabInstance:
       propertyPath: preRequisite
       value: 
       objectReference: {fileID: 774029844}
+    - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
+      propertyPath: activatedSprite
+      value: 
+      objectReference: {fileID: 1188395254, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
+    - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
+      propertyPath: deactivatedSprite
+      value: 
+      objectReference: {fileID: -1210584780, guid: 3d7239e9758b5c44580e3ef83c768510, type: 3}
     - target: {fileID: 876136272595919153, guid: dbfb0a3ed2045f549b82940d68f0852e, type: 3}
       propertyPath: triggerDialogue.sentences.Array.size
       value: 0

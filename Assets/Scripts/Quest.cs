@@ -5,8 +5,8 @@ using UnityEngine;
 public class Quest : MonoBehaviour
 {
     public Quest preRequisite;
+    public Sprite activatedSprite;
     public Dialogue triggerDialogue;
-    public bool openDoor = false;
     public GameObject door;
     public bool changeEnemyPath = false;
     public int enemyPathIndex = 0;
@@ -19,7 +19,6 @@ public class Quest : MonoBehaviour
     public void Complete() {
         if((preRequisite == null || (preRequisite != null && preRequisite.completed)) && !completed)
         {
-            GetComponent<SpriteRenderer>().color = Color.gray;
             QuestSystem.reference.CompleteQuest(this);
             completed = true;
         }

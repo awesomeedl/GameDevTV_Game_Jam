@@ -28,10 +28,16 @@ public class QuestSystem : MonoBehaviour
 
     public void CompleteQuest(Quest quest) {
         SoundManager.PlaySound("jingle");
+        quest.GetComponent<SpriteRenderer>().color = Color.clear;
+        foreach(var q in quests) {
+            if(q.preRequisite == quest) {
+                q.GetComponent<SpriteRenderer>().sprite = q.activatedSprite;
+            }
+        }
         if(quest.triggerDialogue != null) {
             DialogueManager.reference.StartDialogue(quest.triggerDialogue);
         }
-        if(quest.openDoor) {
+        if(quest.door != null) {
             Destroy(quest.door);
         }
         if(quest.changeEnemyPath) {
