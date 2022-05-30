@@ -15,12 +15,7 @@ public class SceneLoader : MonoBehaviour
         levelIndex = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(levelIndex);
     }
-
-    public static void LoadGameOver()
-    {
-        SceneManager.LoadScene("Gameover");
-    }
-
+    
     public static void Retry()
     {
         SceneManager.LoadScene(levelIndex);

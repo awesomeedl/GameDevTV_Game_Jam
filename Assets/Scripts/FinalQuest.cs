@@ -17,7 +17,7 @@ public class FinalQuest : MonoBehaviour
         while(DialogueManager.reference.started) {
             yield return null;
         }
-        SceneLoader.LoadNextLevel();
+        SceneLoader.LoadMenu();
     }
 
     void OnTriggerEnter2D() {        
