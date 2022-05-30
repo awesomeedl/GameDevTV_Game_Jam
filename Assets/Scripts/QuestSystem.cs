@@ -5,7 +5,6 @@ using UnityEngine;
 public class QuestSystem : MonoBehaviour
 {
     public static QuestSystem reference;
-    public DialogueManager dialogueManager;
     public Dialogue beginDialogue;
     public Dialogue endDialogue;
     List<Quest> quests = new List<Quest>();
@@ -15,7 +14,10 @@ public class QuestSystem : MonoBehaviour
     }
 
     void Start() {
-        dialogueManager.StartDialogue(beginDialogue);
+        if(beginDialogue != null)
+        {
+            DialogueManager.reference.StartDialogue(beginDialogue);
+        }
     }
     
     public void AddQuest(Quest quest) {
@@ -25,7 +27,7 @@ public class QuestSystem : MonoBehaviour
     public void CompleteQuest(Quest quest) {
         SoundManager.PlaySound("jingle");
         if(quest.triggerDialogue != null) {
-            dialogueManager.StartDialogue(quest.triggerDialogue);
+            DialogueManager.reference.StartDialogue(quest.triggerDialogue);
         }
         if(quest.openDoor) {
             Destroy(quest.door);
@@ -40,8 +42,8 @@ public class QuestSystem : MonoBehaviour
     }
 
     IEnumerator NextLevel() {
-        dialogueManager.StartDialogue(endDialogue);
-        while(dialogueManager.started) {
+        DialogueManager.reference.StartDialogue(endDialogue);
+        while(DialogueManager.reference.started) {
             yield return null;
         }
         SceneLoader.LoadNextLevel();

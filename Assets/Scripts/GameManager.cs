@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     Animator playerAnimator;
     public Timer timer;
     public Animator ScreenFadeAnimator;
+    bool isRespawning = false;
 
     void Awake()
     {
@@ -34,25 +35,29 @@ public class GameManager : MonoBehaviour
     }
 
     public void Respawn() {
-        timer.ResetTimer();
-        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
-        SoundManager.PlaySound("death");
-        StartCoroutine(RespawnCoroutine());
+        if(!isRespawning) {
+            StartCoroutine(RespawnCoroutine());
+        }
     }
 
     IEnumerator RespawnCoroutine() {
+        isRespawning = true;
         Time.timeScale = 0f;
+        timer.ResetTimer();
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
+        SoundManager.PlaySound("death");
         playerAnimator.SetTrigger("die");
         ScreenFadeAnimator.SetTrigger("play");
-        yield return new WaitForSecondsRealtime(0.4f);
+        yield return new WaitForSecondsRealtime(0.45f);
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
         foreach(var enemy in enemies) {
             enemy.InitPosition();
         }
-        yield return new WaitForSecondsRealtime(0.4f);
+        yield return new WaitForSecondsRealtime(0.45f);
         spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
         Time.timeScale = 1f;
+        isRespawning = false;
     }
 
 

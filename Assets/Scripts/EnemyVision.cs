@@ -4,52 +4,46 @@ using UnityEngine;
 
 public class EnemyVision : MonoBehaviour
 {
-    float terrainDistance = 2.9f;
-    float playerDistance = 2.6f;
+    public Color visionColor;
+    public Color aggroColor;
+    float visionDistance = 2.9f;
     Transform vision;
-    LayerMask terrainMask; 
-    LayerMask playerMask;
+    LayerMask mask;
+    int playerLayer;
 
-    bool isPlayerHit;
     // Start is called before the first frame update
     
+    public void ResetVisionColor() {
+        vision.GetComponent<SpriteRenderer>().color = visionColor;
+    }
+
     void Awake()
     {
-        terrainMask = LayerMask.GetMask("Terrain");
-        playerMask = LayerMask.GetMask("Player");
+        mask = LayerMask.GetMask("Terrain", "Player");
+        playerLayer = LayerMask.NameToLayer("Player");
         vision = transform.GetChild(0);
     }
 
     void Update()
     {
-        if(isPlayerHit) {
-            GameManager.reference.Respawn();
-            isPlayerHit = false;
-        }
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        RaycastHit2D terrainHit = Physics2D.Raycast(transform.position, transform.up, terrainDistance, terrainMask);
-        if(terrainHit)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, visionDistance, mask);
+        if(hit)
         {
-            vision.localScale = new Vector3(1, terrainHit.distance * 1.2f, 1);
-            vision.localPosition = new Vector3(0, vision.localScale.y / 2f, 0);
+            if(hit.transform.gameObject.layer == playerLayer) // Hit Player
+            {
+                vision.GetComponent<SpriteRenderer>().color = aggroColor;
+                GameManager.reference.Respawn();
+            }
+            else // Hit terrain
+            {
+                vision.localScale = new Vector3(1, hit.distance * 1.2f, 1);
+                vision.localPosition = new Vector3(0, vision.localScale.y / 2f, 0);
+            }
         }
-        else
+        else // Hit nothing
         {
             vision.localScale = new Vector3(1, 3.5f, 1);
             vision.localPosition = new Vector3(0, 1.75f, 0);
-        }
-
-        RaycastHit2D playerHit = Physics2D.Raycast(transform.position, transform.up, playerDistance, playerMask);
-        if(playerHit) {
-            isPlayerHit = true;
-        }
-        else
-        {
-            isPlayerHit = false;
         }
     }
 }

@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe70266210b28a4b916fcd3ef2362c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visionColor: {r: 1, g: 1, b: 1, a: 0.3137255}
+  aggroColor: {r: 1, g: 0, b: 0, a: 0.3137255}
 --- !u!1 &4411156338590248841
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,10 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4411156338590248841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9c86ccf28411d54e82f4204b24abd59, type: 3}
+  m_Script: {fileID: 11500000, guid: 02d74f2dc568fa74aaa4b32b92ddf98e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 3
   rotateCooldown: 0.5
   paths: []
 --- !u!1 &4411156339023781989

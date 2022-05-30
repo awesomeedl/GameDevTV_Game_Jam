@@ -6,10 +6,9 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
+	public static DialogueManager reference;
 	public Image characterImage;
 	public TMP_Text dialogueText;
-
-
 	public UIController uiController;
 
 	private Queue<string> sentences = new Queue<string>();
@@ -17,6 +16,10 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<bool> dimBools = new Queue<bool>();
 
 	public bool started = false;
+
+	void Awake() {
+		reference = this;
+	}
 
 	public void StartDialogue (Dialogue dialogue)
 	{

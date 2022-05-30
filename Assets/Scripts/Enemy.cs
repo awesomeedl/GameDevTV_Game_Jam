@@ -36,10 +36,14 @@ public class Enemy : MonoBehaviour
     }
 
     public void InitPosition() {
+        GetComponentInChildren<EnemyVision>().ResetVisionColor();
         transform.position = waypoints[0].position;
-        currentWaypoint = waypoints[0];
+        currentWaypoint = waypoints[1];
+        wayPtIndex = 1;
+        rotateTimer = 0;
+        Rotate();
         rotateTimer = rotateCooldown;
-        wayPtIndex = 0;
+        isMoving = false;
     }
 
     // Update is called once per frame

@@ -26,6 +26,6 @@ public class Quest : MonoBehaviour
     }
 
     void OnTriggerEnter2D() {        
-        GetComponent<Quest>().Complete();
+        Complete();
     }
 }
