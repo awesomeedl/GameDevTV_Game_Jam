@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour
     List<Enemy> enemies = new List<Enemy>();
     public List<Transform> spawnPoints;
     int spawnPointIndex = 0;
-    public GameObject player;
-    Animator playerAnimator;
+    public Player player;
     public Timer timer;
     public Animator ScreenFadeAnimator;
     bool isRespawning = false;
@@ -20,7 +19,10 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-        playerAnimator = player.GetComponent<Animator>();
+        if(player == null)
+        {
+            player = FindObjectOfType<Player>();
+        }
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
     }
 
@@ -44,19 +46,19 @@ public class GameManager : MonoBehaviour
         isRespawning = true;
         Time.timeScale = 0f;
         timer.ResetTimer();
-        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
         SoundManager.PlaySound("death");
-        playerAnimator.SetTrigger("die");
+        player.Die();
         yield return new WaitForSecondsRealtime(0.4f);
         ScreenFadeAnimator.SetTrigger("play");
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(0.2f);
         player.transform.position = spawnPoints[spawnPointIndex].position + Vector3.back;
         foreach(var enemy in enemies) {
             enemy.InitPosition();
         }
-        yield return new WaitForSecondsRealtime(0.25f);
+        spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Deactivate();
         spawnPointIndex = spawnPointIndex < spawnPoints.Count - 1 ? spawnPointIndex + 1 : 0;
         spawnPoints[spawnPointIndex].GetComponent<spawnPoint>().Activate();
+        yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1f;
         isRespawning = false;
     }

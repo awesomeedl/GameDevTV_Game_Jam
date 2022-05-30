@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     public void InitPosition() {
         GetComponentInChildren<EnemyVision>().ResetVisionColor();
+        animator.SetTrigger("Respawn");
         transform.position = waypoints[0].position;
         currentWaypoint = waypoints[1];
         wayPtIndex = 1;

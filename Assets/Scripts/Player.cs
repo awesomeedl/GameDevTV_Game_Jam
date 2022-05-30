@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2d;
     Vector2 velocity;
     float speed = 3f;
+    Animator animator;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -23,5 +25,10 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb2d.velocity = velocity * speed;
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("die");
     }
 }
