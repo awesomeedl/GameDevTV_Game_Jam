@@ -6069,7 +6069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
       propertyPath: endDialogue.sentences.Array.data[3].sentence
-      value: "\u201CMa\u2019am, We've been trying to each you about your car's extended
+      value: "\u201CMa\u2019am, We've been trying to reach you about your car's extended
         warranty\u2026\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 8390000845047792299, guid: 4009954e5244e514288d5b7145a70533, type: 3}
