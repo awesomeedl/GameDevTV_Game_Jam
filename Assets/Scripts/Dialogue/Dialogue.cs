@@ -14,6 +14,7 @@ public class Dialogue {
 		public string sentence;
 	}
 
+
 	public List<Sentence> sentences;
 
 }
